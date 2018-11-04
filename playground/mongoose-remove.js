@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const { ObjectID } = require('mongodb');
 
 const { mongoose } = require('./../server/db/mongoose');
@@ -8,6 +9,6 @@ const { User } = require('./../server/models/user');
 //   console.log(result);
 // });
 
-Todo.findByIdAndDelete('5bd60cad06ddf08888515929').then((todo) => {
+Todo.findByIdAndDelete('5bd60cad06ddf08888515929').then(todo => {
   console.log(todo);
 });

@@ -1,8 +1,9 @@
+/* eslint-disable no-console */
 const { SHA256 } = require('crypto-js');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
-var password = '123abc!';
+const password = '123abc!';
 
 // bcrypt.genSalt(10, (err, salt) => {
 //   bcrypt.hash(password, salt, (err, hash) => {
@@ -10,12 +11,11 @@ var password = '123abc!';
 //   });
 // });
 
-var hashedPassword = '$2a$04$6veKu1CoSTToRD/.77XnbuaM2CWaHgFuBSsXqg0gnwWCduYdSXFMW';
+const hashedPassword = '$2a$04$6veKu1CoSTToRD/.77XnbuaM2CWaHgFuBSsXqg0gnwWCduYdSXFMW';
 
 bcrypt.compare('123abc!', hashedPassword, (err, res) => {
   console.log(res);
 });
-
 
 // var data = {
 //   id: 10

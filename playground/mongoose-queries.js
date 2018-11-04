@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const { ObjectID } = require('mongodb');
 
 const { mongoose } = require('./../server/db/mongoose');
@@ -29,13 +30,16 @@ const { User } = require('./../server/models/user');
 //   console.log('Todo by ID', todo);
 // }).catch((e) => console.log('Error:', e));
 
-var id = '5bd500b3ab50210dee4a8e59'
+const id = '5bd500b3ab50210dee4a8e59';
 
-User.findById(id).then((user) => {
-  if (!user) {
-    return console.log('User not found');
+User.findById(id).then(
+  user => {
+    if (!user) {
+      return console.log('User not found');
+    }
+    console.log(JSON.stringify(user, undefined, 2));
+  },
+  e => {
+    console.log(e);
   }
-  console.log(JSON.stringify(user, undefined, 2));
-}, (e) => {
-  console.log(e)
-});
+);
